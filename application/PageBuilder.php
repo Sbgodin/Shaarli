@@ -49,6 +49,7 @@ class PageBuilder
     {
         $this->tpl = new RainTPL();
 
+	/***** Disables the version check
         try {
             $version = ApplicationUtils::checkUpdate(
                 SHAARLI_VERSION,
@@ -66,6 +67,7 @@ class PageBuilder
             $this->tpl->assign('newVersion', '');
             $this->tpl->assign('versionError', escape($exc->getMessage()));
         }
+	*****/
 
         $this->tpl->assign('feedurl', escape(index_url($_SERVER)));
         $searchcrits = ''; // Search criteria
